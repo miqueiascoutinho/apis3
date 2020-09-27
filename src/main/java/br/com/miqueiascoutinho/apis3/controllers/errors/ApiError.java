@@ -14,13 +14,11 @@ public class ApiError {
 	private List<String> messages;
 
 	public ApiError(final int code, final List<String> messages) {
-		super();
 		this.code = code;
 		this.messages = messages;
 	}
 
 	public ApiError(final int code, final String message) {
-		super();
 		this.code = code;
 		messages = Arrays.asList(message);
 	}

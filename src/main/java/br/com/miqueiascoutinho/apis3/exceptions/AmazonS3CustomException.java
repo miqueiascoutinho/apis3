@@ -1,23 +1,17 @@
 package br.com.miqueiascoutinho.apis3.exceptions;
 
-
 import lombok.Getter;
 
 @Getter
-public class AmazonS3CustomException extends RuntimeException{
-
-    /**
-	 * 
-	 */
+public class AmazonS3CustomException extends RuntimeException {
 	private static final long serialVersionUID = 1L;
 
 	public AmazonS3CustomException(String ex) {
-        super(ex);
-    }
+		super(ex);
+	}
 
-    public AmazonS3CustomException(String ex, Throwable e) {
-        super(ex, e);
-    }
+	public AmazonS3CustomException(String ex, Throwable e) {
+		super(ex, e);
+	}
 
-	
 }

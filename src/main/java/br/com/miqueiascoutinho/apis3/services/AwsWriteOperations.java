@@ -19,6 +19,8 @@ import br.com.miqueiascoutinho.apis3.tos.AwsBucket;
 @Service
 public class AwsWriteOperations {
 
+	private final String ERROR_BUCKET_NAME_NOT_AVAILABLE = "Já existe um bucket com esse nome, por favor altere o nome e tente novamente";
+	
 	@Autowired
 	private AmazonS3 amazonS3Client;
 
@@ -28,7 +30,15 @@ public class AwsWriteOperations {
 			return amazonS3Client.createBucket(createBucketRequest);
 
 		} catch (Exception e) {
-			throw new AmazonS3CustomException("Erro ao criar o bucket " + bucket.getName());
+			if ((e.getLocalizedMessage().contains("bucket name is not available") ||
+					e.getLocalizedMessage().contains("BucketAlreadyOwnedByYou"))) {
+				
+				throw new AmazonS3CustomException(ERROR_BUCKET_NAME_NOT_AVAILABLE);
+				
+			} else {
+				throw new AmazonS3CustomException(e.getMessage());
+			}
+			
 		}
 	}
 
@@ -36,7 +46,6 @@ public class AwsWriteOperations {
 		try {
 			amazonS3Client.deleteBucket(bucketName);
 		} catch (AmazonS3Exception ae) {
-
 			if (ae.getMessage().contains("NoSuchBucket")) {
 				throw new AmazonS3CustomNotFoundException("O bucket " + bucketName + " não existe");
 			} else {

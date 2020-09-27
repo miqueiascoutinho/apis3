@@ -29,14 +29,13 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
-
 @RestController
 @RequestMapping(path = "/v1/aws/s3")
 @Api(tags = "Operações API S3", value = "API com exemplos de integração com Amazon S3")
 public class AwsController {
 
 	@Autowired
-	private AwsReadOperations awsOperations;
+	private AwsReadOperations awsReadOperations;
 	
 	@Autowired
 	private AwsWriteOperations awsWriteOperations;
@@ -47,7 +46,7 @@ public class AwsController {
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = AwsBucket.class),
 			@ApiResponse(code = 400, message = "Bad Request", response = ApiError.class), })
 	public List<AwsBucket> listAwsS3Buckets() {
-		return awsOperations.listBuckets();
+		return awsReadOperations.listBuckets();
 	}
 
 	@GetMapping(path = "/bucket-content")
@@ -57,12 +56,17 @@ public class AwsController {
 			@ApiResponse(code = 400, message = "Bad Request", response = ApiError.class), })
 	public List<AwsBucketFile> listBucketContent( @RequestParam(value = "bucket-name") String bucketName) {
 			
-		return awsOperations.listBucketContent(bucketName);
+		return awsReadOperations.listBucketContent(bucketName);
 	}
 	
 	@PostMapping(path = "/bucket")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	@ApiOperation(value = "Operação responsável em criar um bucket no Amazon S3")
+	@ApiOperation(value = "Operação responsável em criar um bucket no Amazon S3."
+			+ "Regras para criar um bucket, sendo o mesmo padrão de DNS: "
+			+ "1) O nome do bucket deve ter entre 3 e 63 caracteres; "
+			+ "2) O nome do bucket não pode conter espaços; "
+			+ "3) O nome do bucket deve ser minúsculo (lowerCase); "
+			+ "4) O nome do bucket é único/universal, não podendo existir 2 buckets com o mesmo nome (mesmo que em regiões diferentes).")
 	@ApiResponses(value = { @ApiResponse(code = 201, message = "Sucesso"),
 			@ApiResponse(code = 400, message = "Bad Request", response = ApiError.class), })
 	public Bucket createBucket(@RequestBody AwsBucket bucket) {
