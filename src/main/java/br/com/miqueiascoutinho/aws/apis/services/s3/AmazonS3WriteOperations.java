@@ -1,4 +1,4 @@
-package br.com.miqueiascoutinho.apis3.services;
+package br.com.miqueiascoutinho.aws.apis.services.s3;
 
 import java.io.File;
 
@@ -12,22 +12,22 @@ import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.CreateBucketRequest;
 import com.amazonaws.services.s3.model.Region;
 
-import br.com.miqueiascoutinho.apis3.exceptions.AmazonS3CustomException;
-import br.com.miqueiascoutinho.apis3.exceptions.AmazonS3CustomNotFoundException;
-import br.com.miqueiascoutinho.apis3.tos.AwsBucket;
+import br.com.miqueiascoutinho.aws.apis.exceptions.AmazonS3CustomException;
+import br.com.miqueiascoutinho.aws.apis.exceptions.AmazonS3CustomNotFoundException;
+import br.com.miqueiascoutinho.aws.apis.tos.AwsBucket;
 
 @Service
-public class AwsWriteOperations {
+public class AmazonS3WriteOperations {
 
 	private final String ERROR_BUCKET_NAME_NOT_AVAILABLE = "Já existe um bucket com esse nome, por favor altere o nome e tente novamente";
 	
 	@Autowired
-	private AmazonS3 amazonS3Client;
+	private AmazonS3 amazonS3ClientNormal;
 
 	public Bucket createBucket(AwsBucket bucket) {
 		CreateBucketRequest createBucketRequest = new CreateBucketRequest(bucket.getName(), Region.SA_SaoPaulo);
 		try {
-			return amazonS3Client.createBucket(createBucketRequest);
+			return amazonS3ClientNormal.createBucket(createBucketRequest);
 
 		} catch (Exception e) {
 			if ((e.getLocalizedMessage().contains("bucket name is not available") ||
@@ -44,7 +44,7 @@ public class AwsWriteOperations {
 
 	public void deleteBucket(String bucketName) {
 		try {
-			amazonS3Client.deleteBucket(bucketName);
+			amazonS3ClientNormal.deleteBucket(bucketName);
 		} catch (AmazonS3Exception ae) {
 			if (ae.getMessage().contains("NoSuchBucket")) {
 				throw new AmazonS3CustomNotFoundException("O bucket " + bucketName + " não existe");
@@ -60,7 +60,7 @@ public class AwsWriteOperations {
 	public void putObject(String bucketName, String fileName, File file) {
 
 		try {
-			amazonS3Client.putObject(bucketName, fileName, file);
+			amazonS3ClientNormal.putObject(bucketName, fileName, file);
 		} catch (AmazonS3Exception ae) {
 
 			if (ae.getMessage().contains("NoSuchBucket")) {

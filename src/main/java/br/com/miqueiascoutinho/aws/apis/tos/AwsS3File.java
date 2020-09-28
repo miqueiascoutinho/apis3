@@ -1,4 +1,4 @@
-package br.com.miqueiascoutinho.apis3.tos;
+package br.com.miqueiascoutinho.aws.apis.tos;
 
 import javax.validation.constraints.NotBlank;
 

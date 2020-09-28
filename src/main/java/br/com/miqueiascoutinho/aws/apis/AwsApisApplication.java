@@ -1,13 +1,13 @@
-package br.com.miqueiascoutinho.apis3;
+package br.com.miqueiascoutinho.aws.apis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Apis3Application {
+public class AwsApisApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Apis3Application.class, args);
+		SpringApplication.run(AwsApisApplication.class, args);
 	}
 
 }

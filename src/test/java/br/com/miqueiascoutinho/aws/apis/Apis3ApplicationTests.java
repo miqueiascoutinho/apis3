@@ -1,4 +1,4 @@
-package br.com.miqueiascoutinho.apis3;
+package br.com.miqueiascoutinho.aws.apis;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

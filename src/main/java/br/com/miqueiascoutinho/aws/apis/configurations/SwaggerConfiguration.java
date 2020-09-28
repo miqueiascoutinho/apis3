@@ -1,4 +1,4 @@
-package br.com.miqueiascoutinho.apis3.configurations;
+package br.com.miqueiascoutinho.aws.apis.configurations;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -28,7 +28,7 @@ public class SwaggerConfiguration extends WebMvcConfigurationSupport {
     public Docket apiAmazonS3() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("br.com.miqueiascoutinho.apis3.controllers"))
+                .apis(RequestHandlerSelectors.basePackage("br.com.miqueiascoutinho.aws.apis.controllers"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo()).produces(DEFAULT_PRODUCES_AND_CONSUMES)

@@ -1,4 +1,4 @@
-package br.com.miqueiascoutinho.apis3.controllers.errors;
+package br.com.miqueiascoutinho.aws.apis.controllers.errors;
 
 import java.util.Arrays;
 import java.util.List;

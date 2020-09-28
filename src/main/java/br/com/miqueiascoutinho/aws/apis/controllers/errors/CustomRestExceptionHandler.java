@@ -1,6 +1,5 @@
-package br.com.miqueiascoutinho.apis3.controllers.errors;
+package br.com.miqueiascoutinho.aws.apis.controllers.errors;
 
-import br.com.miqueiascoutinho.apis3.exceptions.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +14,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+
+import br.com.miqueiascoutinho.aws.apis.exceptions.*;
 
 @ControllerAdvice(annotations = RestController.class)
 public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {

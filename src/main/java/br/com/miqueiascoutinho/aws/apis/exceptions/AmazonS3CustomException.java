@@ -1,4 +1,4 @@
-package br.com.miqueiascoutinho.apis3.exceptions;
+package br.com.miqueiascoutinho.aws.apis.exceptions;
 
 import lombok.Getter;
 

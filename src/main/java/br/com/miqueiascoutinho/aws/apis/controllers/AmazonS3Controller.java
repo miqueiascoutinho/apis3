@@ -1,4 +1,4 @@
-package br.com.miqueiascoutinho.apis3.controllers;
+package br.com.miqueiascoutinho.aws.apis.controllers;
 
 import java.io.File;
 import java.util.List;
@@ -20,12 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.amazonaws.services.s3.model.Bucket;
 
-import br.com.miqueiascoutinho.apis3.controllers.errors.ApiError;
-import br.com.miqueiascoutinho.apis3.services.AwsReadOperations;
-import br.com.miqueiascoutinho.apis3.services.AwsWriteOperations;
-import br.com.miqueiascoutinho.apis3.tos.AwsBucketFile;
-import br.com.miqueiascoutinho.apis3.tos.AwsS3File;
-import br.com.miqueiascoutinho.apis3.tos.AwsBucket;
+import br.com.miqueiascoutinho.aws.apis.controllers.errors.ApiError;
+import br.com.miqueiascoutinho.aws.apis.services.s3.AmazonS3ReadOperations;
+import br.com.miqueiascoutinho.aws.apis.services.s3.AmazonS3WriteOperations;
+import br.com.miqueiascoutinho.aws.apis.tos.AwsBucket;
+import br.com.miqueiascoutinho.aws.apis.tos.AwsBucketFile;
+import br.com.miqueiascoutinho.aws.apis.tos.AwsS3File;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -33,14 +33,14 @@ import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping(path = "/v1/aws/s3")
-@Api(tags = "Operações API S3", value = "API com exemplos de integração com Amazon S3")
-public class AwsController {
+@Api(tags = "API Amazon S3", value = "API com exemplos de integração com Amazon S3")
+public class AmazonS3Controller {
 
 	@Autowired
-	private AwsReadOperations awsReadOperations;
+	private AmazonS3ReadOperations amazonS3ReadOperations;
 	
 	@Autowired
-	private AwsWriteOperations awsWriteOperations;
+	private AmazonS3WriteOperations amazonS3WriteOperations;
 	
 	@GetMapping(path = "/list-buckets")
 	@ResponseStatus(code = HttpStatus.OK)
@@ -48,7 +48,7 @@ public class AwsController {
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = AwsBucket.class),
 			@ApiResponse(code = 400, message = "Bad Request", response = ApiError.class), })
 	public List<AwsBucket> listAwsS3Buckets() {
-		return awsReadOperations.listBuckets();
+		return amazonS3ReadOperations.listBuckets();
 	}
 
 	@GetMapping(path = "/bucket-content")
@@ -58,7 +58,7 @@ public class AwsController {
 			@ApiResponse(code = 400, message = "Bad Request", response = ApiError.class), })
 	public List<AwsBucketFile> listBucketContent( @RequestParam(value = "bucket-name") String bucketName) {
 			
-		return awsReadOperations.listBucketContent(bucketName);
+		return amazonS3ReadOperations.listBucketContent(bucketName);
 	}
 	
 	@PostMapping(path = "/bucket")
@@ -72,7 +72,7 @@ public class AwsController {
 	@ApiResponses(value = { @ApiResponse(code = 201, message = "Sucesso"),
 			@ApiResponse(code = 400, message = "Bad Request", response = ApiError.class), })
 	public Bucket createBucket(@RequestBody AwsBucket bucket) {
-		return awsWriteOperations.createBucket(bucket);
+		return amazonS3WriteOperations.createBucket(bucket);
 	}
 	
 	@DeleteMapping(path = "/bucket/{bucket-name}")
@@ -81,7 +81,7 @@ public class AwsController {
 			@ApiResponse(code = 400, message = "Bad Request", response = ApiError.class), 
 			@ApiResponse(code = 404, message = "Not Found", response = ApiError.class)})
 	public void deleteBucket(@PathVariable(value = "bucket-name") String bucketName) {
-		awsWriteOperations.deleteBucket(bucketName);
+		amazonS3WriteOperations.deleteBucket(bucketName);
 	}
 	
 	@PutMapping(path = "/bucket/{bucket-name}")
@@ -93,7 +93,7 @@ public class AwsController {
 			@PathVariable(value = "bucket-name") String bucketName)  {
 		
 		File f = new File(file.getFile());
-		awsWriteOperations.putObject(bucketName,
+		amazonS3WriteOperations.putObject(bucketName,
 				file.getFileName(), 
 				f);
 	}

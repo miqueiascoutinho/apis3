@@ -1,4 +1,4 @@
-package br.com.miqueiascoutinho.apis3.configurations;
+package br.com.miqueiascoutinho.aws.apis.configurations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,7 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 
 @Configuration
-public class AwsS3Client {
+public class AmazonS3Client {
 
 	private static final String AWS_REGION = "REPLACE_THIS_VALUE";
 	private static final String AWS_ACCESS_KEY_ID = "REPLACE_THIS_VALUE";
@@ -21,8 +21,9 @@ public class AwsS3Client {
 	 * 
 	 * Para mais informações, ler o help de aws configure
 	 */
+	
 	@Bean
-	public AmazonS3 amazonS3Client() {
+	public AmazonS3 amazonS3ClientNormal() {
 		return AmazonS3ClientBuilder
 				.standard()
 				.build();
