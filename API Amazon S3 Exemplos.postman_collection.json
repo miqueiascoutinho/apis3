@@ -1,0 +1,1289 @@
+{
+	"info": {
+		"_postman_id": "afc42791-59ce-4aaf-8451-fd9c4e830003",
+		"name": "API Amazon S3 Exemplos",
+		"description": "API com exemplos de integração com Amazon S3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "v1/aws/s3",
+			"item": [
+				{
+					"name": "bucket",
+					"item": [
+						{
+							"name": "GET /v1/aws/s3/list-buckets",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v1/aws/s3/list-buckets",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"aws",
+										"s3",
+										"list-buckets"
+									]
+								},
+								"description": "Operação responsável em listar os buckets no Amazon S3"
+							},
+							"response": [
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/list-buckets",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"list-buckets"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/list-buckets",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"list-buckets"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 27 Sep 2020 23:55:59 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"bucket-name\": \"meu-bucket-miqueiascoutinho-teste\"\n    },\n    {\n        \"bucket-name\": \"miqueiascoutinho-bucket\"\n    },\n    {\n        \"bucket-name\": \"polly-codes-mp3-miqueias-coutinho2\"\n    },\n    {\n        \"bucket-name\": \"polly-notes-mp3-miqueias-coutinho2\"\n    },\n    {\n        \"bucket-name\": \"polly-notes-web-miqueias-coutinho2\"\n    }\n]"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/list-buckets",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"list-buckets"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": 90678338,\n \"messages\": [\n  \"eu consequat\",\n  \"id mollit et commodo\"\n ]\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/list-buckets",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"list-buckets"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/list-buckets",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"list-buckets"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/list-buckets",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"list-buckets"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"bucket-name\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "GET /v1/aws/s3/bucket-content",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v1/aws/s3/bucket-content?bucket-name=polly-notes-web-miqueias-coutinho2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"aws",
+										"s3",
+										"bucket-content"
+									],
+									"query": [
+										{
+											"key": "bucket-name",
+											"value": "polly-notes-web-miqueias-coutinho2",
+											"description": "(Required) bucket-name"
+										}
+									]
+								},
+								"description": "Operação responsável em listar o conteúdo de um determinado bucket no Amazon S3"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket-content?bucket-name=polly-notes-web-miqueias-coutinho2",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket-content"
+											],
+											"query": [
+												{
+													"key": "bucket-name",
+													"value": "polly-notes-web-miqueias-coutinho2",
+													"description": "(Required) bucket-name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 28 Sep 2020 01:09:01 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"file-name\": \"assets/css/busy.css\"\n    },\n    {\n        \"file-name\": \"assets/img/apigw.png\"\n    },\n    {\n        \"file-name\": \"assets/img/cloudfront.png\"\n    },\n    {\n        \"file-name\": \"assets/img/cognito.png\"\n    },\n    {\n        \"file-name\": \"assets/img/ddb.png\"\n    },\n    {\n        \"file-name\": \"assets/img/lambda.png\"\n    },\n    {\n        \"file-name\": \"assets/img/logo.png\"\n    },\n    {\n        \"file-name\": \"assets/img/s3.png\"\n    },\n    {\n        \"file-name\": \"assets/js/jsbn.js\"\n    },\n    {\n        \"file-name\": \"assets/js/jsbn2.js\"\n    },\n    {\n        \"file-name\": \"external/amazon-cognito-identity.min.js\"\n    },\n    {\n        \"file-name\": \"external/aws-cognito-sdk.min.js\"\n    },\n    {\n        \"file-name\": \"external/aws-sdk-2.7.18.min.js\"\n    },\n    {\n        \"file-name\": \"external/bootstrap.min.css\"\n    },\n    {\n        \"file-name\": \"external/bootstrap.min.js\"\n    },\n    {\n        \"file-name\": \"external/google-fonts.css\"\n    },\n    {\n        \"file-name\": \"external/jquery-3.1.1.slim.min.js\"\n    },\n    {\n        \"file-name\": \"external/moment.min.js\"\n    },\n    {\n        \"file-name\": \"external/sjcl.js\"\n    },\n    {\n        \"file-name\": \"external/wavesurfer.min.js\"\n    },\n    {\n        \"file-name\": \"favicon.ico\"\n    },\n    {\n        \"file-name\": \"fonts/glyphicons-halflings-regular.eot\"\n    },\n    {\n        \"file-name\": \"fonts/glyphicons-halflings-regular.svg\"\n    },\n    {\n        \"file-name\": \"fonts/glyphicons-halflings-regular.ttf\"\n    },\n    {\n        \"file-name\": \"fonts/glyphicons-halflings-regular.woff\"\n    },\n    {\n        \"file-name\": \"fonts/glyphicons-halflings-regular.woff2\"\n    },\n    {\n        \"file-name\": \"index.html\"\n    },\n    {\n        \"file-name\": \"inline.bundle.js\"\n    },\n    {\n        \"file-name\": \"main.bundle.js\"\n    },\n    {\n        \"file-name\": \"polyfills.bundle.js\"\n    },\n    {\n        \"file-name\": \"styles.bundle.js\"\n    },\n    {\n        \"file-name\": \"testuser/001.mp3\"\n    },\n    {\n        \"file-name\": \"vendor.bundle.js\"\n    }\n]"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket-content?bucket-name=polly-notes-web-miqueias-coutinho",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket-content"
+											],
+											"query": [
+												{
+													"key": "bucket-name",
+													"value": "polly-notes-web-miqueias-coutinho",
+													"description": "(Required) bucket-name"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 28 Sep 2020 01:10:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 400,\n    \"messages\": [\n        \"Erro ao consultar o conteúdo do bucket polly-notes-web-miqueias-coutinho\"\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "POST /v1/aws/s3/bucket",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"bucket-name\": \"meu-primeiro-bucket-de-teste\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/aws/s3/bucket",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"aws",
+										"s3",
+										"bucket"
+									]
+								},
+								"description": "Operação responsável em criar um bucket no Amazon S3.Regras para criar um bucket, sendo o mesmo padrão de DNS: 1) O nome do bucket deve ter entre 3 e 63 caracteres; 2) O nome do bucket não pode conter espaços; 3) O nome do bucket deve ser minúsculo (lowerCase); 4) O nome do bucket é único/universal, não podendo existir 2 buckets com o mesmo nome (mesmo que em regiões diferentes)."
+							},
+							"response": [
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"bucket-name\": \"meu-primeiro-bucket-de- teste\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 28 Sep 2020 01:12:56 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 400,\n    \"messages\": [\n        \"Bucket name should not contain white space\"\n    ]\n}"
+								},
+								{
+									"name": "Sucesso",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"bucket-name\": \"meu-primeiro-bucket-de-teste\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 28 Sep 2020 01:12:26 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"meu-primeiro-bucket-de-teste\",\n    \"owner\": null,\n    \"creationDate\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "PUT /v1/aws/s3/bucket/${bucket-name}",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"aws-file-name\": \"meu-primeiro-arquivo.txt\",\n    \"local-file-absolute-path\": \"/home/miqueias/teste.txt\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"aws",
+										"s3",
+										"bucket",
+										":bucket-name"
+									],
+									"variable": [
+										{
+											"key": "bucket-name",
+											"value": "polly-notes-web-miqueias-coutinho2",
+											"description": "(Required) bucket-name"
+										}
+									]
+								},
+								"description": "Operação responsável em realizar o put (upload) de um arquivo local para um bucket específico no Amazon S3"
+							},
+							"response": [
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"aws-file-name\": \"<string>\",\n    \"local-file-absolute-path\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket",
+												":bucket-name"
+											],
+											"variable": [
+												{
+													"key": "bucket-name"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"aws-file-name\": \"<string>\",\n    \"local-file-absolute-path\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket",
+												":bucket-name"
+											],
+											"variable": [
+												{
+													"key": "bucket-name"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": 90678338,\n \"messages\": [\n  \"eu consequat\",\n  \"id mollit et commodo\"\n ]\n}"
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"aws-file-name\": \"<string>\",\n    \"local-file-absolute-path\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket",
+												":bucket-name"
+											],
+											"variable": [
+												{
+													"key": "bucket-name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"aws-file-name\": \"meu-primeiro-arquivo.txt\",\n    \"local-file-absolute-path\": \"/home/miqueias/teste.tx\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket",
+												":bucket-name"
+											],
+											"variable": [
+												{
+													"key": "bucket-name",
+													"value": "polly-notes-web-miqueias-coutinho2",
+													"description": "(Required) bucket-name"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 28 Sep 2020 01:17:32 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 404,\n    \"messages\": [\n        \"O arquivo informado não existe. Usar o seguinte exemplo como padrão: /home/seu-usuario/seu-file-upload.txt\"\n    ]\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"aws-file-name\": \"<string>\",\n    \"local-file-absolute-path\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket",
+												":bucket-name"
+											],
+											"variable": [
+												{
+													"key": "bucket-name"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"aws-file-name\": \"meu-primeiro-arquivo.txt\",\n    \"local-file-absolute-path\": \"/home/miqueias/teste.txt\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket",
+												":bucket-name"
+											],
+											"variable": [
+												{
+													"key": "bucket-name",
+													"value": "polly-notes-web-miqueias-coutinho2",
+													"description": "(Required) bucket-name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Length",
+											"value": "0"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 28 Sep 2020 01:16:55 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"aws-file-name\": \"<string>\",\n    \"local-file-absolute-path\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket",
+												":bucket-name"
+											],
+											"variable": [
+												{
+													"key": "bucket-name"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": 90678338,\n \"messages\": [\n  \"eu consequat\",\n  \"id mollit et commodo\"\n ]\n}"
+								},
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"aws-file-name\": \"<string>\",\n    \"local-file-absolute-path\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket",
+												":bucket-name"
+											],
+											"variable": [
+												{
+													"key": "bucket-name"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "DELETE /v1/aws/s3/bucket/${bucket-name}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"aws",
+										"s3",
+										"bucket",
+										":bucket-name"
+									],
+									"variable": [
+										{
+											"key": "bucket-name",
+											"value": "meu-primeiro-bucket-de-teste",
+											"description": "(Required) bucket-name"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket",
+												":bucket-name"
+											],
+											"variable": [
+												{
+													"key": "bucket-name"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket",
+												":bucket-name"
+											],
+											"variable": [
+												{
+													"key": "bucket-name"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": 90678338,\n \"messages\": [\n  \"eu consequat\",\n  \"id mollit et commodo\"\n ]\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket",
+												":bucket-name"
+											],
+											"variable": [
+												{
+													"key": "bucket-name",
+													"value": "meu-primeiro-bucket-de-test",
+													"description": "(Required) bucket-name"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 28 Sep 2020 01:14:17 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 404,\n    \"messages\": [\n        \"O bucket meu-primeiro-bucket-de-test não existe\"\n    ]\n}"
+								},
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket",
+												":bucket-name"
+											],
+											"variable": [
+												{
+													"key": "bucket-name"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket",
+												":bucket-name"
+											],
+											"variable": [
+												{
+													"key": "bucket-name"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"code\": 90678338,\n \"messages\": [\n  \"eu consequat\",\n  \"id mollit et commodo\"\n ]\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket",
+												":bucket-name"
+											],
+											"variable": [
+												{
+													"key": "bucket-name"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket",
+												":bucket-name"
+											],
+											"variable": [
+												{
+													"key": "bucket-name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/v1/aws/s3/bucket/:bucket-name",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"aws",
+												"s3",
+												"bucket",
+												":bucket-name"
+											],
+											"variable": [
+												{
+													"key": "bucket-name",
+													"value": "meu-primeiro-bucket-de-teste",
+													"description": "(Required) bucket-name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Length",
+											"value": "0"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 28 Sep 2020 01:14:39 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "796db95f-e5f2-4ba5-a869-43644b50253d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6d41a71a-1c12-4d4f-85c4-4e8caa01429a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "1f5d5dfc-e345-4c35-a816-3f10e577f251",
+			"key": "baseUrl",
+			"value": "http://localhost:9080"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

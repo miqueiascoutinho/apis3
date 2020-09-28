@@ -3,6 +3,8 @@ package br.com.miqueiascoutinho.apis3.controllers;
 import java.io.File;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -87,7 +89,7 @@ public class AwsController {
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK"),
 			@ApiResponse(code = 400, message = "Bad Request", response = ApiError.class), 
 			@ApiResponse(code = 404, message = "Not Found", response = ApiError.class)})
-	public void putObject (@RequestBody AwsS3File file,
+	public void putObject (@Valid @RequestBody AwsS3File file,
 			@PathVariable(value = "bucket-name") String bucketName)  {
 		
 		File f = new File(file.getFile());
